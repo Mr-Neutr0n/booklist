@@ -17,12 +17,28 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Booklist",
   description: "Books I want to read.",
+  keywords: ["booklist", "reading list", "books", "personal library", "catalog"],
+  authors: [{ name: "harikp" }],
   metadataBase: new URL("https://booklist.harikp.com"),
   openGraph: {
     title: "Booklist",
     description: "Books I want to read.",
     type: "website",
     siteName: "Booklist",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Booklist — a personal reading list catalog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Booklist",
+    description: "Books I want to read.",
+    images: ["/og-image.jpg"],
   },
 };
 

@@ -64,6 +64,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" type="image/png" href="/icon-192.png" sizes="192x192" />
+        <link rel="icon" type="image/png" href="/icon-512.png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      </head>
       <body
         className={`${inter.variable} ${ibmPlexMono.variable} antialiased`}
       >

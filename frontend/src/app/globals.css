@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf6f1;
+  --foreground: #2c2420;
+  --accent: #8b6f4e;
+  --accent-light: #c4a97d;
+  --card-bg: #ffffff;
+  --card-border: #e8ddd0;
+  --muted: #9c8b7a;
+  --success: #5a7a5a;
+  --danger: #a65d5d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--muted);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a {
+  transition: all 0.15s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}

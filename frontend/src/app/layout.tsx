@@ -15,30 +15,41 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Booklist",
-  description: "Books I want to read.",
-  keywords: ["booklist", "reading list", "books", "personal library", "catalog"],
+  title: "Booklist | Personal Reading List & Book Catalog",
+  description:
+    "A personal catalog of books I want to read, currently reading, and loved. Search any book, file it to the shelf, browse the collection. Built like a library card catalog.",
+  keywords: [
+    "booklist",
+    "reading list",
+    "book catalog",
+    "personal library",
+    "books to read",
+    "book tracker",
+  ],
   authors: [{ name: "harikp" }],
   metadataBase: new URL("https://booklist.harikp.com"),
   openGraph: {
-    title: "Booklist",
-    description: "Books I want to read.",
+    title: "Booklist — A Personal Book Catalog",
+    description:
+      "Search any book, file it to the shelf, browse the collection. A reading list that looks like a library card catalog.",
+    url: "https://booklist.harikp.com",
     type: "website",
     siteName: "Booklist",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://booklist.harikp.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Booklist — a personal reading list catalog",
+        alt: "Booklist — A personal reading list catalog",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Booklist",
-    description: "Books I want to read.",
-    images: ["/og-image.jpg"],
+    title: "Booklist — A Personal Book Catalog",
+    description:
+      "Search any book, file it to the shelf, browse the collection. Built like a library card catalog.",
+    images: ["https://booklist.harikp.com/og-image.jpg"],
   },
 };
 

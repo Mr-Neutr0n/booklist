@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   authors: [{ name: "harikp" }],
   metadataBase: new URL("https://booklist.harikp.com"),
   openGraph: {
-    title: "Booklist — A Personal Book Catalog",
+    title: "Booklist | A Personal Book Catalog",
     description:
       "Search any book, file it to the shelf, browse the collection. A reading list that looks like a library card catalog.",
     url: "https://booklist.harikp.com",
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
         url: "https://booklist.harikp.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Booklist — A personal reading list catalog",
+        alt: "Booklist | A personal reading list catalog",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Booklist — A Personal Book Catalog",
+    title: "Booklist | A Personal Book Catalog",
     description:
       "Search any book, file it to the shelf, browse the collection. Built like a library card catalog.",
     images: ["https://booklist.harikp.com/og-image.jpg"],

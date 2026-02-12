@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
@@ -8,9 +8,37 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
 export const metadata: Metadata = {
   title: "Booklist",
   description: "Books I want to read.",
+  metadataBase: new URL("https://booklist.harikp.com"),
+  openGraph: {
+    title: "Booklist",
+    description: "Books I want to read.",
+    type: "website",
+    siteName: "Booklist",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Booklist",
+  url: "https://booklist.harikp.com",
+  description: "A personal reading list catalog.",
+  applicationCategory: "UtilitiesApplication",
+  operatingSystem: "Web",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
 };
 
 export default function RootLayout({
@@ -20,24 +48,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
-        <header className="border-b border-card-border bg-card-bg/60 backdrop-blur-sm sticky top-0 z-50">
-          <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <body
+        className={`${inter.variable} ${ibmPlexMono.variable} antialiased`}
+      >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <main className="max-w-3xl mx-auto px-6 py-10">{children}</main>
+        <footer className="max-w-3xl mx-auto px-6 pb-8 pt-4 border-t border-card-border">
+          <p className="font-mono text-xs text-muted tracking-wide">
             <Link
-              href="/"
-              className="text-xl font-semibold tracking-tight text-foreground hover:text-accent"
+              href="https://harikp.com"
+              className="hover:text-foreground"
+              target="_blank"
             >
-              Booklist
+              harikp.com
             </Link>
-            <Link
-              href="/add"
-              className="text-sm font-medium text-muted hover:text-accent px-3 py-1.5 rounded-md hover:bg-card-border/40"
-            >
-              + Add
-            </Link>
-          </div>
-        </header>
-        <main className="max-w-5xl mx-auto px-6 py-8">{children}</main>
+            <span className="mx-2">·</span>
+            2026
+          </p>
+        </footer>
       </body>
     </html>
   );

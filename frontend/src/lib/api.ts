@@ -4,15 +4,16 @@ export interface Book {
   id: string;
   title: string;
   author: string;
-  cover_edition_key?: string;
-  year?: number;
+  cover_url?: string;
+  ol_key?: string;
+  added_at: string;
 }
 
-export interface BookData {
+export interface BookCreate {
   title: string;
   author: string;
-  cover_edition_key?: string;
-  year?: number;
+  cover_url?: string;
+  ol_key?: string;
 }
 
 export async function getBooks(): Promise<Book[]> {
@@ -23,14 +24,14 @@ export async function getBooks(): Promise<Book[]> {
   return res.json();
 }
 
-export async function addBook(token: string, bookData: BookData): Promise<Book> {
+export async function addBook(token: string, data: BookCreate): Promise<Book> {
   const res = await fetch(`${API_URL}/api/books`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(bookData),
+    body: JSON.stringify(data),
   });
   if (!res.ok) {
     throw new Error("Failed to add book");
@@ -38,7 +39,10 @@ export async function addBook(token: string, bookData: BookData): Promise<Book> 
   return res.json();
 }
 
-export async function deleteBook(token: string, bookId: string): Promise<void> {
+export async function deleteBook(
+  token: string,
+  bookId: string
+): Promise<void> {
   const res = await fetch(`${API_URL}/api/books/${bookId}`, {
     method: "DELETE",
     headers: {

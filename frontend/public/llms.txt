@@ -1,0 +1,7 @@
+# Booklist
+
+> A personal reading list catalog. Search any book via Open Library, add it to the shelf. Public viewing, private editing.
+
+## Pages
+- [Home](https://booklist.harikp.com): Browse the book catalog
+- [Add](https://booklist.harikp.com/add): Search and add books (requires passcode)
